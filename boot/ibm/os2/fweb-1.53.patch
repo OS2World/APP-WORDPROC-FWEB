@@ -1,0 +1,53 @@
+From fweb-users-owner@pppl.gov Wed Mar  6 13:50 EST 1996
+Return-Path: <fweb-users-owner@pppl.gov>
+Received: from pppl.gov by utkux.utcc.utk.edu (5.x/2.8s-UTK.UTCC)
+	id AA13273; Wed, 6 Mar 1996 13:50:09 -0500
+Received: from relay6.UU.NET (relay6.UU.NET [192.48.96.16]) by pppl.gov (8.7.4/8.7.3) with ESMTP id MAA04783 for <fweb-users@pppl.gov>; Wed, 6 Mar 1996 12:54:43 -0500 (EST)
+Received: from Enterprise.arete.com by relay6.UU.NET with SMTP 
+	id QQafwx13362; Wed, 6 Mar 1996 12:54:37 -0500 (EST)
+Received: from raspc.arete.com (raspc.arete.com [199.98.85.27]) by Enterprise.arete.com (8.6.12/8.6.12) with SMTP id JAA04027; Wed, 6 Mar 1996 09:34:16 -0800
+Received: by raspc.arete.com (IBM OS/2 SENDMAIL VERSION 1.3.14/2.12um) id AA0063; Wed, 06 Mar 96 09:55:44 -0800
+From: rasmith@raspc.arete.com
+Date: Wed, 06 Mar 96 09:55:44 -0800
+Message-Id: <9603061755.AA0063@raspc.arete.com>
+To: fweb-users@pppl.gov
+Subject: memory leak in FWEB 1.53
+Reply-To: rasmith@arete.com
+Content-Type: text
+Content-Length: 1217
+Status: RO
+
+There is an error in the handling of module name space in FWEB 1.53.
+Some data is placed before the beginning of an allocated block.
+Most operating systems / compilers will not catch this, because of the
+way the heap is managed.  A few (like OS/2) put guard pages around some
+heap segments, so this can cause an access violation.  [I told John
+Krommes about this before the release of v 1.53, and thought he had
+fixed it.   As he mentioned, he has been otherwise (over-) committed.]
+
+Here is a context diff showing the correction.  For bootstrapping,
+this code is around line 5214 in web/common.c
+
+*** common.web.dist	Sat Sep 23 12:16:54 1995
+--- common.web	Fri Oct 13 18:01:04 1995
+***************
+*** 5365,5370 ****
+  if(!mod_names) return; // For errors happening during the command line.
+  
+! for(--next_mod_name; next_mod_name >= mod_names; next_mod_name--)
+! 	FREE(*next_mod_name);
+  }
+  
+--- 5365,5370 ----
+  if(!mod_names) return; // For errors happening during the command line.
+  
+! while(next_mod_name > mod_names)
+! FREE(* --next_mod_name);
+  }
+  
+
+
+--
+Ralph Smith, Arete Associates		Tel.: (818) 501-2880
+email: rasmith@arete.com		FAX:  (818) 501-2905
+snailmail: P.O. Box 6024, Sherman Oaks, CA 91413

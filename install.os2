@@ -1,0 +1,9 @@
+To install the os/2 part of fweb-1.53
+
+see the readme.os2 file here or in the boot/ibm/os2 directory.
+
+There are all modified files, a readme, and the executables there.  You
+need at least the style files from the original distribution in
+manual/*.sty, so don't erease it too early.
+
+

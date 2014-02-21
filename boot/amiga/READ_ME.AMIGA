@@ -1,0 +1,22 @@
+                        --- FWEB FOR THE AMIGA ---
+                               Version 1.53
+                            September 25, 1995
+
+This subdirectory contains hand-coded bootstrap files for bringing FWEB up
+on the Commodore Amiga with the SAS/C++ 6.55 compiler.
+
+Copy the header files `config.h' and `custom.h' together with the defaults
+file `defaults.def' to the `web' source directory and invoke the bootstrap
+rule by saying `smake -b defaults.def'.  This should create the executables
+for FTANGLE and FWEAVE.
+
+This Amiga port of FWEB 1.53 was done by
+
+   Andreas Scherer
+   Rolandstraﬂe 16
+   52070 Aachen, Germany
+   <scherer@physik.rwth-aachen.de>
+
+Please report any problems directly connected with the Amiga version to
+him.  Also, suggestions for further improving the installation steps will
+be appreciated.

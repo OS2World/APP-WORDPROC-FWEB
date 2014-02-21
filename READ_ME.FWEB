@@ -1,0 +1,91 @@
+			   --- FWEB v. 1.53 ---
+			    September 11, 1995
+
+
+IMPORTANT NOTES:
+
+* FWEB attempts to use the GNU standards for configuration, makefiles, etc.
+If you are a Unix user (more precisely, if you have sh available), please
+follow the installation procedure described below under ``SUMMARY of
+INSTALLATION PROCEDURE''.  If you are an IBM-PC user, executable files that
+run in extended memory are provided in ftp/pppl.gov:/pub/fweb/executables.
+Otherwise, DO NOT USE THIS VERSION, as neither the code nor the
+installation procedures have been tested for v1.50 on other platforms.
+
+* Documentation for this version is maintained in gnu texinfo format.  The
+installation procedure will install the relevant files (`make install').
+Online information will then be available through emacs' info browser.
+Alternatively, you can obtain printed documentation by saying
+
+	cd manual
+	lpr fweb.ps
+
+
+SUMMARY of INSTALLATION PROCEDURE:
+
+  (0) If you are a Unix user, especially one with an ANSI-C compiler (you
+will have a minimum of hassle with gcc), install FWEB by doing the
+following.  This procedure has been modified slightly from v1.40 to make it
+more compatible with the UNIX_INSTALL discussion.  Specifically,
+
+	* `configure' is now in the web subdirectory;
+
+	* one no longer needs to say `make bootstrap'; `make' is sufficient.
+
+In the following, brackets denote optional; prefix is /usr/local by
+default, as is exec-prefix. 
+
+------------------------------------------------------------------------------
+	cd fweb-1.53/web
+	./configure [--prefix=path] [--exec-prefix=path]
+	make -n install 
+# Use the -n option to see what's going to happen.  Ignore the fact that this
+# may say it's going to run FTANGLE; that won't happen when you say `make'
+# below.  If you need to make changes to system paths, etc.,
+# either use the --prefix and/or --exec-prefix options, or edit
+# defaults.mk.in, then rerun ./configure.)
+	make
+	<Log on as root>
+	make install
+-------------------------------------------------------------------------------
+
+This should be sufficient.  However, if you have difficulties, you may need
+to absorb the following information.
+
+  ./configure is a sh script that was generated automatically by running the
+utility program `autoconf'.  In a departure from standard procedure, it first
+reads an FWEB configuration file whose default name is `configure.ini'.
+(More about that below.)  Then it attempts to figure out various local
+system features automatically.  Finally, it generates three files from
+autoconf templates with .in suffixes:
+
+	defaults.mk.in  => defaults.mk
+	config.h.in     => config.h
+	custom.h.in     => custom.h
+
+The file `defaults.mk' is included into Makefile.  The files `config.h'
+and `custom.h' are included into the C code by the *.c files.  Check
+out what configure produces, especially for the directory prefixes in the
+INSTALLATION section of `defaults.mk'.  If you need to make changes, make
+them in the *.in files (save the old templates), then run ./configure again.
+
+  For more information about automatic configuration, read the file
+UNIX_INSTALL, which comes courtesy of the FSF.  
+
+  The present procedure differs in one respect from standard ./configure
+protocol: an extra layer of variable definitions is used for variables
+related to FWEB that are not figured out automatically by ./configure.
+E.g., instead of saying in defaults.mk.in ``OBJ = obj'', we say ``OBJ =
+@_OBJ_@''.  Configure replaces the @_OBJ_@ with the present value of the
+environment variable _OBJ_.  To give that a value, ./configure sources in
+the contents of the file $CONFIGURE_INI.  If the environment variable
+CONFIGURE_INI isn't defined, then the default file `configure.ini' is read.
+This mechanism is partly used to aid the developer--files like `ansi.ini' are
+used to automatically generate the old-style bootstrap files for systems
+that can't use ./configure---and partly to ease the transition to
+./configure, which doesn't figure everything out for itself yet.
+
+   (1) If you can't use ./configure, you can try using the old-style
+bootstraps in the boot subdirectory.  However, these haven't yet been
+upgraded or tested, with the exception of those for the IBM-PC.  (If you're
+an expert, of course, you're welcome to proceed at your own risk.)

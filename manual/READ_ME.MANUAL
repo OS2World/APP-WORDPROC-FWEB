@@ -1,0 +1,33 @@
+		   --- The FWEB/MANUAL SUBDIRECTORY ---
+
+  Beginning with v1.50, all documentation is maintained with texinfo.  The
+installation procedure will automatically install the relevant fweb.info
+files.  To obtain printed documentation, print fweb.ps or say
+
+	tex fweb.texi
+
+assuming that the relevant texinfo macros are installed on your
+system.  This relies on the files fweb.??s being present.  `make install'
+does not install those files by default.  If you are generating
+documentation from the installed fweb.texi, you must say instead
+
+	texi2dvi fweb.texi
+
+which regenerates fweb.??s.
+
+  `make install' automatically generates and installs the files fweb.info*.
+
+  The following files are kept in this directory:
+
+	fweb.1      --- Unix man pages (very abbreviated information).
+
+	fweb.texi   --- Source code for the .info files.
+	fweb.cps    --- Concept index for fweb.texi
+	fweb.fns    --- Function index for fweb.texi
+	fweb.ps     --- Postscript form of the the user manual.
+
+	fwebmac.web --- Source code for the FWEB macro package.
+	fwebmac.sty --- The tangled output from above; \input into the TeX
+			files produced by FWEAVE.
+
+	fweb.tex    --- TeX macros needed for weaving the FWEB source code.

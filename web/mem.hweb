@@ -1,0 +1,14 @@
+@z --- mem.hweb ---
+
+FWEB version 1.53 (September 23, 1995)
+
+Based on version 0.5 of S. Levy's CWEB [copyright (C) 1987 Princeton University]
+
+@x-----------------------------------------------------------------------------
+
+
+@<Glob...@>=
+
+#ifndef C_TYPES
+	#include SFILE(y_type.h)
+#endif /* |C_TYPES| */

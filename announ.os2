@@ -1,0 +1,108 @@
+
+I have uploaded the os/2 port(let) of the tool for literate programming, 
+fweb-1.53, to hobbes (ftp-os2.nmsu.com) and cdrom (ftp-os2.cdrom.com).
+The files sit in incoming and should move to 
+
+Suggested directory: os2/tex
+
+I append a part of the readme I wrote for the OS/2 port.
+
+
+%file: READ_ME.os2
+%date: 27-Feb-1996 .. 6-Mar-1996
+%Author: Stefan A. Deutscher (sad@utk.edu; stefand@elphy.irz.hu-berlin.de)
+
+
+This is the OS/2 re-compile of J. A. Krommes' fweb-1.53, a tool for 
+literate programming in c, f77, f90, ratfor, and so on. It also allows
+verbatim input for languages it doesn't know (I hope to use it with
+Extended ANSI-ISO Pascal).
+
+It contains the original sources and the following files in the
+new subdirectory boot/ibm/os2:
+
+wrw-a--    19563 Mar 06 14:39 Makefile.os2
+-rw-a--     9040 Mar 06 15:50 READ_ME.os2
+-rw-a--   140526 Mar 06 14:44 common.c.os2
+-rw-a--   207673 Mar 06 14:44 common.web.os2
+-rw-a--     2034 Mar 06 14:45 config.h.os2
+-rw-a--    14721 Mar 06 14:36 custom.h.os2
+-rw-a--     4665 Mar 06 14:42 defaults.mk.os2
+-rwxa--   253956 Mar 06 14:33 ftangle.exe*
+-rwxa--   229380 Mar 06 14:33 fweave.exe*
+-rw-a--     2287 Mar 06 15:31 fweb-1.53.patch
+
+The original sources are up for ftp on: 
+                              ftp://ftp.pppl.gov/pub/fweb/
+
+
+The executables as well as the patched sources and the makefiles and
+other custom files are in fweb-1.53/boot/ibm/os2. You will need 
+HPFS for the long file names; I couldn't be bothered to change it
+all to 8.3 FAT names. Fweb alone is worth going to HPFS, in case you
+aren't there yet.
+
+You need to have the emx runtime library (emxrt.zip) version 0.9a or
+later installed. It can be found on ftp-os2.cdrom.com (cdrom),
+ftp-os2.nmsu.edu (hobbes), for example.
+
+To use it you will also need (besides an editor and a compiler)
+LaTeX2e. The emTeX distribution as found on CTAN and the normal
+os/2 sites (or the December '95 Hobbes OS/2 CD-ROM) are fine.
+You will also need the LaTeX packages multicol and indentfirst,
+also on CTAN. I don't include them here because it is a much better
+idea to fetch them from there, where they are maintained and updated.
+Get the whole tools subdirectory, and run LaTeX2e on the file tools.ins
+to install the packages. That was faster for me than trying to
+install just these two packages by hand ... Now:
+
+
+You can simply put the executables in your path (ftangle.exe,
+fweave.exe) and the style and macro files 
+
+manual/fwebmac.sty
+manual/fwebnum.sty
+
+in your TEXINPUT, TEXINPUTS directory, print the docs (and read them)
+and install the *.info files and such, in case you have GNU info
+installed. In case you like UNIXish man pages and have gnu man
+installed, you can also visit
+
+fweb-1.53/manual 
+
+and move fweb.1 in your manpage path, and you can print fweb.ps for a
+nice hand book. In fact, if you have not much experience with literate
+programming, I even recommend you get a hold of the old version 1.30 of
+fweb (on CTAN, Comprehensive TeX Archive Network, for instance:
+ftp.shsu.edu) and print its postscrip manual. Of course things have
+changed since then, but it is a very detailed treatment of the subject
+at hand.
+
+
+You're free to go now. You can also recompile thw whole thing and make 
+a port that integrates more smoothly with the distribution of fweb-1.53,
+for instance by fiddeling with the configure script and all that.
+
+Here are some notes about my port.
+
+{well, read the real thing for that} ....
+
+For more information look at the docs that come with the original
+distribution, at the mailing lists they mention, and check out the
+usenet news group comp.programming.literate.  
+
+Anyway. Like with the original source code: No warranties of any form
+implied. You use it at your own risk, if your toaster explodes -- too
+bad.  Chocolates and such to D. Knuth, S. Levy, J. A. Krommes, Ralph
+Smith, E. Matthes, well -- if there is some left I'll take a bite.
+
+Have fun!     Stefan A. Deutscher  (27-Feb-1996)  
+              sad@utk.edu; stefand@elphy.irz.hu-berlin.de
+
+=============================================================================
+Stefan A. Deutscher                     |  (+1-423-)   voice      fax
+The University of Tennessee, Knoxville  |  UTK  :     974-7838  974-7843
+Department of Physics and Astronomy     |  ORNL :     574-5897  574-1118
+401, A. H. Nielsen Building             |  home :     522-7845  522-7845
+Knoxville, T.N. 37996-1200, USA         |  email:     sad@utk.edu
+=============================================================================

@@ -1,0 +1,207 @@
+%file: READ_ME.os2
+%date: 27-Feb-1996 .. 6-Mar-1996
+%Author: Stefan A. Deutscher (sad@utk.edu; stefand@elphy.irz.hu-berlin.de)
+
+
+This is the OS/2 re-compile of J. A. Krommes' fweb-1.53, a tool for 
+literate programming in c, f77, f90, ratfor, and so on. It also allows
+verbatim input for languages it doesn't know (I hope to use it with
+Extended ANSI-ISO Pascal).
+
+It contains the original sources and the following files in the
+new subdirectory boot/ibm/os2:
+
+wrw-a--    19563 Mar 06 14:39 Makefile.os2
+-rw-a--     9040 Mar 06 15:50 READ_ME.os2
+-rw-a--   140526 Mar 06 14:44 common.c.os2
+-rw-a--   207673 Mar 06 14:44 common.web.os2
+-rw-a--     2034 Mar 06 14:45 config.h.os2
+-rw-a--    14721 Mar 06 14:36 custom.h.os2
+-rw-a--     4665 Mar 06 14:42 defaults.mk.os2
+-rwxa--   253956 Mar 06 14:33 ftangle.exe*
+-rwxa--   229380 Mar 06 14:33 fweave.exe*
+-rw-a--     2287 Mar 06 15:31 fweb-1.53.patch
+
+The original sources are up for ftp on: 
+                              ftp://ftp.pppl.gov/pub/fweb/
+
+
+The executables as well as the patched sources and the makefiles and
+other custom files are in fweb-1.53/boot/ibm/os2. You will need 
+HPFS for the long file names; I couldn't be bothered to change it
+all to 8.3 FAT names. Fweb alone is worth going to HPFS, in case you
+aren't there yet.
+
+You need to have the emx runtime library (emxrt.zip) version 0.9a or
+later installed. It can be found on ftp-os2.cdrom.com (cdrom),
+ftp-os2.nmsu.edu (hobbes), for example.
+
+To use it you will also need (besides an editor and a compiler)
+LaTeX2e. The emTeX distribution as found on CTAN and the normal
+os/2 sites (or the December '95 Hobbes OS/2 CD-ROM) are fine.
+You will also need the LaTeX packages multicol and indentfirst,
+also on CTAN. I don't include them here because it is a much better
+idea to fetch them from there, where they are maintained and updated.
+Get the whole tools subdirectory, and run LaTeX2e on the file tools.ins
+to install the packages. That was faster for me than trying to
+install just these two packages by hand ... Now:
+
+
+You can simply put the executables in your path (ftangle.exe,
+fweave.exe) and the style and macro files 
+
+manual/fwebmac.sty
+manual/fwebnum.sty
+
+in your TEXINPUT, TEXINPUTS directory, print the docs (and read them)
+and install the *.info files and such, in case you have GNU info
+installed. In case you like UNIXish man pages and have gnu man
+installed, you can also visit
+
+fweb-1.53/manual 
+
+and move fweb.1 in your manpage path, and you can print fweb.ps for a
+nice hand book. In fact, if you have not much experience with literate
+programming, I even recommend you get a hold of the old version 1.30 of
+fweb (on CTAN, Comprehensive TeX Archive Network, for instance:
+ftp.shsu.edu) and print its postscrip manual. Of course things have
+changed since then, but it is a very detailed treatment of the subject
+at hand.
+
+
+You're free to go now. You can also recompile thw whole thing and make 
+a port that integrates more smoothly with the distribution of fweb-1.53,
+for instance by fiddeling with the configure script and all that.
+
+Here are some notes about my port.
+
+Notes for OS/2 port of fweb-1.53, using the slightly modified UNIX/ANSI
+defaults, compiled with emx09a, fixpack 06 (gcc and more for OS/2).
+This is run under the OS/2 ports of tcsh (version 6.052) or sh/ksh
+(pdksh distribution), so path names and all that are really unix like
+and don't have to be modified. I have not tested building this with
+plain cmd.exe, and I will not. Of course, it does *run* under cmd.exe.
+
+Anyway, take the following files from the fweb-1.53/boot/ibm/os2
+directory and copy them into the fweb-1.53/web directory
+onto their counterparts w/o the .os2 extension. 
+
+Makefile.os2     config.h.os2     custom.h.os2     
+defaults.mk.os2  common.c.os2
+
+If you don't have sh.exe, just remove that line from the Makefile.
+
+The following modifications have been made:
+
+* cp defaults.mk, custom.h from boot/unix/ansi to web
+* added SHELL=sh.exe as very first line to Makefile, to avoid
+  cmd.exe to be invoked  (use sh.exe from pdksh distribution)
+  This is cosmetic, to suppress output from the ECHO command.
+  It also works with cmd.exe, and w/o that line
+
+* modified defaults.mk to add
+  - stripping -s, optimization -O2, and -Wall, -pdeantic in the CFLAGS
+  - stripping in the LDFLAGS
+  - added EXE extensions
+  - modified LINK command to allow -o$(@)$(EXE)
+  - this should also work with --program-suffix=SUFFIX option to make;
+    as it is now, 
+      make fweave.exe 
+      causes fweave.exe.exe to be built. Oh well. it works.
+
+* modified custom.h to
+  - add OS/2 banner and such
+  - check null file (/dev/nul or /dev/null)
+  - enabled timing, and modified the inclusion of header files, assisted by
+    inspection of the cusom.h file in the sun/gcc, and in the include
+    directory of the emx distribution
+
+* configure doesn't work at all, it just sits there.
+* Make doesn't work: Misses configure.h
+* Copied manually configure.h.in to configure.h;
+  now compile works with make:
+
+  make                       (will make fweave and ftangle from sources)
+
+  Some warnings in ftangle again, the same as before in version 1.40 also:
+
+gcc -c    -Dconst=  ./ftangle.c
+./ftangle.c: In function `not_unique':
+./ftangle.c:2795: warning: passing arg 4 of `qsort' from incompatible pointer type
+./ftangle.c: In function `see_dup':
+./ftangle.c:2835: warning: passing arg 4 of `qsort' from incompatible pointer type
+gcc -c -s -O2    -Dconst=  ./common.c
+gcc -c -s -O2    -Dconst=  ./ratfor.c
+gcc -c -s -O2    -Dconst=  ./reserved.c
+./reserved.c: In function `see_reserved':
+./reserved.c:2241: warning: passing arg 4 of `qsort' from incompatible pointer type
+gcc -c -s -O2    -Dconst= ./eval.c
+gcc -c -s -O2    -Dconst= ./macs.c
+gcc -c -s -O2    -Dconst= ./style.c
+./style.c: In function `prn_codes':
+./style.c:955: warning: passing arg 4 of `qsort' from incompatible pointer type
+./style.c: In function `see_style':
+./style.c:1313: warning: passing arg 4 of `qsort' from incompatible pointer typ
+gcc -c -s -O2    -Dconst= ./termcap0.c
+gcc -s -o ftangle.exe ftangle.o  common.o reserved.o ratfor.o \
+                      eval.o macs.o style.o termcap0.o -lm
+gcc -c -s -O2    -Dconst=  ./fweave.c
+gcc -c -s -O2    -Dconst=  ./prod.c
+gcc -c -s -O2    -Dconst= ./ratfor0.c
+gcc -s -o fweave.exe fweave.o  common.o prod.o \
+reserved.o style.o ratfor0.o termcap0.o -lm
+
+After that my make run dies with something like:
+
+cd ./../manual && makeinfo --fill-column=70 fweb.texi
+Making info file `fweb.info' from `fweb.texi'.
+fweb.texi:98: Unknown info command `ifhtml'.
+fweb.texi:100: Unmatched `@end'.
+fweb.texi:8873: Unknown info command `ifhtml'.
+fweb.texi:8875: Unmatched `@end'.
+
+But maybe my texinfo stuff is simply out of date or not in the path.
+
+The executables work. Changed in the config.h file all that made sense
+to 1, i.e. defined full ANSI compliance (I assume), and now: Compiles
+again, still same warnings, but still runs. With -Wall it gives some
+more warnings.
+
+Interesting enough, while the executables work on examples I cooked up,
+they choked on some of the *.web files from the distribution and got
+termianted by OS/2 with a SIGSEGV access violation. Endless debugging
+didn't get me anywhere, but a tiny looking patch from Ralph Smith
+(rasmith@arete.com) who heared my moaning on the fweb-users mailing list
+got rid of that.  It turns out that OS/2 seems to protect itself better
+than some other systems!  See the included file: fweb-1.53.patch.  I
+never would have found it, but now it works, and it works well.
+
+The programmes still seem to lose memory (about 1kB per run or so)
+which can be seen when -s is used, but they don't die with access violations.
+
+So you may see things like this, but don't be concerned:
+
+ fweave -s ftangle.web
+ Allocated maximum of 983417 bytes dynamically; ended with 982417 bytes.
+ fweave -s -i ftangle.web
+ Allocated maximum of 983528 bytes dynamically; ended with 982528 bytes.
+
+The relevant files will be include with a suffix .os2, and should be
+copied over the ones w/o the suffix (which are best kept as .orig
+files). Oh -- this works only on HPFS. On FAT too much would have to be
+changed for that funny DOS 8.3 naming system. Someone has done that
+for a MS-DOG port, but I didn't.  Sorry.
+
+For more information look at the docs that come with the original
+distribution, at the mailing lists they mention, and check out the
+usenet news group comp.programming.literate.  
+
+Anyway. Like with the original source code: No warranties of any form
+implied. You use it at your own risk, if your toaster explodes -- too
+bad.  Chocolates and such to D. Knuth, S. Levy, J. A. Krommes, Ralph
+Smith, E. Matthes, well -- if there is some left I'll take a bite.
+
+Have fun!     Stefan A. Deutscher  (27-Feb-1996)  
+              sad@utk.edu; stefand@elphy.irz.hu-berlin.de
+
+

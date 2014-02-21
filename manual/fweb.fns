@@ -1,0 +1,291 @@
+\initial {#}
+\entry {\code {#line}}{61}
+\initial {$}
+\entry {\code {$A}}{52}
+\entry {\code {$ABS}}{52}
+\entry {\code {$ASSERT}}{53}
+\entry {\code {$COMMENT}}{53}
+\entry {\code {$DATE}}{53}
+\entry {\code {$DAY}}{53}
+\entry {\code {$DECR}}{53}
+\entry {\code {$DEFINE}}{53}
+\entry {\code {$DO}}{54}
+\entry {\code {$DUMPDEF}}{54}
+\entry {\code {$E}}{55}
+\entry {\code {$ERROR}}{55}
+\entry {\code {$EVAL}}{55}
+\entry {\code {$EXP}}{55}
+\entry {\code {$GETENV}}{55}
+\entry {\code {$HOME}}{55}
+\entry {\code {$IF}}{56}
+\entry {\code {$IFCASE}}{56}
+\entry {\code {$IFDEF}}{56}
+\entry {\code {$IFELSE}}{56}
+\entry {\code {$IFNDEF}}{56}
+\entry {\code {$INCR}}{56}
+\entry {\code {$INPUT{\_}LINE}}{57}
+\entry {\code {$L}}{57}
+\entry {\code {$LANGUAGE}}{57}
+\entry {\code {$LANGUAGE{\_}NUM}}{57}
+\entry {\code {$LEN}}{58}
+\entry {\code {$LOG}}{58}
+\entry {\code {$LOG10}}{58}
+\entry {\code {$M}}{58}
+\entry {\code {$MAX}}{58}
+\entry {\code {$MIN}}{58}
+\entry {\code {$MODULE{\_}NAME}}{58}
+\entry {\code {$MODULES}}{58}
+\entry {\code {$OUTPUT{\_}LINE}}{58}
+\entry {\code {$P}}{59}
+\entry {\code {$PI}}{59}
+\entry {\code {$POW}}{59}
+\entry {\code {$ROUTINE}}{59}
+\entry {\code {$SECTION{\_}NUM}}{59}
+\entry {\code {$SECTIONS}}{59}
+\entry {\code {$SQRT}}{59}
+\entry {\code {$STRING}}{59}
+\entry {\code {$STUB}}{60}
+\entry {\code {$TIME}}{60}
+\entry {\code {$TRANSLIT}}{60}
+\entry {\code {$U}}{60}
+\entry {\code {$UNDEF}}{60}
+\entry {\code {$UNQUOTE}}{60}
+\entry {\code {$UNROLL}}{54}
+\entry {\code {$VERBATIM}}{60}
+\entry {\code {$VERSION}}{60}
+\initial {-}
+\entry {\code {-}}{13}
+\entry {\code {-!}}{30}
+\entry {\code {-#}}{30}
+\entry {\code {-.}}{29}
+\entry {\code {-/}}{30}
+\entry {\code {-:}}{29}
+\entry {\code {-=}}{30}
+\entry {\code {-{\tt\char'100}}}{14}
+\entry {\code {-{\tt\char43}}}{30}
+\entry {\code {-{\tt\gtr}}}{30}
+\entry {\code {-{\tt\indexbackslash }}}{29}
+\entry {\code {-1}}{14}
+\entry {\code {-2}}{14}
+\entry {\code {-A}}{15}
+\entry {\code {-b}}{15}
+\entry {\code {-B}}{15}
+\entry {\code {-c}}{15}
+\entry {\code {-c{\tt\char43}{\tt\char43}}}{16}
+\entry {\code {-d}}{16}
+\entry {\code {-D}}{16}
+\entry {\code {-e}}{16}
+\entry {\code {-E}}{16}
+\entry {\code {-f}}{17}
+\entry {\code {-F}}{17}
+\entry {\code {-h}}{18}
+\entry {\code {-H}}{17}
+\entry {\code {-i}}{18}
+\entry {\code {-I}}{18}
+\entry {\code {-ix}}{18}
+\entry {\code {-j}}{19}
+\entry {\code {-k}}{19}
+\entry {\code {-l}}{19}
+\entry {\code {-L}}{19}
+\entry {\code {-l(}}{29}
+\entry {\code {-m}}{20}
+\entry {\code {-m;}}{20}
+\entry {\code {-m4}}{20}
+\entry {\code {-n}}{20}
+\entry {\code {-n!}}{22}
+\entry {\code {-n&}}{22}
+\entry {\code {-n)}}{23}
+\entry {\code {-n/}}{22}
+\entry {\code {-n:}}{21}
+\entry {\code {-n;}}{21}
+\entry {\code {-n{\tt\indexbackslash }}}{21}
+\entry {\code {-n9}}{20}
+\entry {\code {-nb}}{21}
+\entry {\code {-np}}{21}
+\entry {\code {-o}}{23}
+\entry {\code {-p}}{24}
+\entry {\code {-P}}{24}
+\entry {\code {-r}}{24}
+\entry {\code {-r!}}{25}
+\entry {\code {-r)}}{25}
+\entry {\code {-r/}}{25}
+\entry {\code {-r;}}{25}
+\entry {\code {-r9}}{24}
+\entry {\code {-rb}}{25}
+\entry {\code {-rg}}{24}
+\entry {\code {-rk}}{24}
+\entry {\code {-rK}}{25}
+\entry {\code {-s}}{26}
+\entry {\code {-sm}}{26}
+\entry {\code {-t}}{27}
+\entry {\code {-T#}}{26}
+\entry {\code {-T%}}{26}
+\entry {\code {-TD}}{26}
+\entry {\code {-Tv}}{26}
+\entry {\code {-u}}{27}
+\entry {\code {-U}}{27}
+\entry {\code {-v}}{27}
+\entry {\code {-w}}{28}
+\entry {\code {-W}}{27, 28}
+\entry {\code {-W[}}{27}
+\entry {\code {-x}}{28}
+\entry {\code {-X}}{28}
+\entry {\code {-y}}{28}
+\entry {\code {-yb}}{79}
+\entry {\code {-ybs}}{79}
+\entry {\code {-ycb}}{79}
+\entry {\code {-ycf}}{79}
+\entry {\code {-ycg}}{80}
+\entry {\code {-yd}}{80}
+\entry {\code {-ydt}}{80}
+\entry {\code {-ydx}}{80}
+\entry {\code {-yid}}{80}
+\entry {\code {-yif}}{80}
+\entry {\code {-ykt}}{80}
+\entry {\code {-ykw}}{80}
+\entry {\code {-ylb}}{81}
+\entry {\code {-yll}}{80}
+\entry {\code {-yln}}{81}
+\entry {\code {-ylx}}{81}
+\entry {\code {-ym}}{81}
+\entry {\code {-yma}}{81}
+\entry {\code {-ymb}}{81}
+\entry {\code {-yn}}{81}
+\entry {\code {-ynf}}{81}
+\entry {\code {-yop}}{82}
+\entry {\code {-yr}}{82}
+\entry {\code {-ys}}{82}
+\entry {\code {-ysb}}{82}
+\entry {\code {-ytt}}{82}
+\entry {\code {-ytw}}{82}
+\entry {\code {-yx}}{82}
+\entry {\code {-yxb}}{82}
+\entry {\code {-z}}{29}
+\entry {\code {-Z}}{29}
+\initial {.}
+\entry {\code {.fweb}}{10, 79}
+\initial {{\tt\char'100}}
+\entry {\code {{\tt\char'100}}}{32}
+\entry {\code {{\tt\char'100}!}}{46}
+\entry {\code {{\tt\char'100}#}}{44}
+\entry {\code {{\tt\char'100}#define}}{61}
+\entry {\code {{\tt\char'100}#elif}}{61}
+\entry {\code {{\tt\char'100}#endif}}{61}
+\entry {\code {{\tt\char'100}#if}}{61}
+\entry {\code {{\tt\char'100}#ifdef}}{61}
+\entry {\code {{\tt\char'100}#ifndef}}{61}
+\entry {\code {{\tt\char'100}#line}}{61}
+\entry {\code {{\tt\char'100}#undef}}{61}
+\entry {\code {{\tt\char'100}%}}{41}
+\entry {\code {{\tt\char'100}%%}}{41}
+\entry {\code {{\tt\char'100}&}}{44}
+\entry {\code {{\tt\char'100}'}}{40}
+\entry {\code {{\tt\char'100}(}}{41}
+\entry {\code {{\tt\char'100})}}{42}
+\entry {\code {{\tt\char'100}*}}{6, 32}
+\entry {\code {{\tt\char'100},}}{43}
+\entry {\code {{\tt\char'100}-}}{42}
+\entry {\code {{\tt\char'100}.}}{42}
+\entry {\code {{\tt\char'100}/}}{44}
+\entry {\code {{\tt\char'100}/*}}{41}
+\entry {\code {{\tt\char'100}//}}{41}
+\entry {\code {{\tt\char'100}:}}{46}
+\entry {\code {{\tt\char'100};}}{45}
+\entry {\code {{\tt\char'100}=}}{43}
+\entry {\code {{\tt\char'100}?}}{41}
+\entry {\code {{\tt\char'100}[}}{12, 40}
+\entry {\code {{\tt\char'100}]}}{12}
+\entry {\code {{\tt\char'100}{\_}}}{42}
+\entry {\code {{\tt\char'100}{\tt\char'042}}}{40}
+\entry {\code {{\tt\char'100}{\tt\char'100}}}{31}
+\entry {\code {{\tt\char'100}{\tt\char'173}}}{42}
+\entry {\code {{\tt\char'100}{\tt\char'174}}}{32, 44}
+\entry {\code {{\tt\char'100}{\tt\char'176}}}{44}
+\entry {\code {{\tt\char'100}{\tt\char43}}}{42}
+\entry {\code {{\tt\char'100}{\tt\gtr}}}{33}
+\entry {\code {{\tt\char'100}{\tt\hat}}}{42}
+\entry {\code {{\tt\char'100}{\tt\indexbackslash }}}{43}
+\entry {\code {{\tt\char'100}{\tt\less}}}{33}
+\entry {\code {{\tt\char'100}0}}{31}
+\entry {\code {{\tt\char'100}1}}{31}
+\entry {\code {{\tt\char'100}2}}{31}
+\entry {\code {{\tt\char'100}9}}{43}
+\entry {\code {{\tt\char'100}a}}{33}
+\entry {\code {{\tt\char'100}A}}{33}
+\entry {\code {{\tt\char'100}b}}{34}
+\entry {\code {{\tt\char'100}c}}{34}
+\entry {\code {{\tt\char'100}c{\tt\char43}{\tt\char43}}}{34}
+\entry {\code {{\tt\char'100}d}}{34}
+\entry {\code {{\tt\char'100}D}}{34}
+\entry {\code {{\tt\char'100}e}}{45}
+\entry {\code {{\tt\char'100}f}}{35}
+\entry {\code {{\tt\char'100}i}}{35}
+\entry {\code {{\tt\char'100}I}}{36}
+\entry {\code {{\tt\char'100}l}}{36}
+\entry {\code {{\tt\char'100}L}}{36}
+\entry {\code {{\tt\char'100}m}}{37}
+\entry {\code {{\tt\char'100}M}}{36}
+\entry {\code {{\tt\char'100}n}}{38}
+\entry {\code {{\tt\char'100}N}}{37}
+\entry {\code {{\tt\char'100}n9}}{38}
+\entry {\code {{\tt\char'100}o}}{38}
+\entry {\code {{\tt\char'100}O}}{38}
+\entry {\code {{\tt\char'100}r}}{38}
+\entry {\code {{\tt\char'100}r9}}{39}
+\entry {\code {{\tt\char'100}t}}{43}
+\entry {\code {{\tt\char'100}u}}{39}
+\entry {\code {{\tt\char'100}v}}{39}
+\entry {\code {{\tt\char'100}W}}{39}
+\entry {\code {{\tt\char'100}x}}{39}
+\entry {\code {{\tt\char'100}y}}{39}
+\entry {\code {{\tt\char'100}z}}{39}
+\initial {{\tt\indexbackslash }}
+\entry {\code {{\tt\indexbackslash }/}}{22}
+\entry {\code {{\tt\indexbackslash }beforeindex}}{72}
+\entry {\code {{\tt\indexbackslash }botofcontents}}{73}
+\entry {\code {{\tt\indexbackslash }documentclass}}{71}
+\entry {\code {{\tt\indexbackslash }documentstyle}}{71}
+\entry {\code {{\tt\indexbackslash }INDEX}}{6, 72, 83}
+\entry {\code {{\tt\indexbackslash }maketitle}}{73}
+\entry {\code {{\tt\indexbackslash }numbercode}}{74}
+\entry {\code {{\tt\indexbackslash }numberdefs}}{74}
+\entry {\code {{\tt\indexbackslash }numberline}}{74}
+\entry {\code {{\tt\indexbackslash }numberTeX}}{74}
+\entry {\code {{\tt\indexbackslash }pagerefs}}{74}
+\entry {\code {{\tt\indexbackslash }section}}{72}
+\entry {\code {{\tt\indexbackslash }startindex}}{72}
+\entry {\code {{\tt\indexbackslash }subsection}}{72}
+\entry {\code {{\tt\indexbackslash }subsubsection}}{72}
+\entry {\code {{\tt\indexbackslash }title}}{73}
+\entry {\code {{\tt\indexbackslash }Title}}{73}
+\entry {\code {{\tt\indexbackslash }topofcontents}}{73}
+\entry {\code {{\tt\indexbackslash }twocolumn}}{72}
+\entry {\code {{\tt\indexbackslash }usepackage}}{71}
+\entry {\code {{\tt\indexbackslash }WARRAY}}{27}
+\entry {\code {{\tt\indexbackslash }Wbegin}}{72}
+\entry {\code {{\tt\indexbackslash }Wblock}}{15}
+\entry {\code {{\tt\indexbackslash }Wfin}}{72}
+\entry {\code {{\tt\indexbackslash }WIF}}{35}
+\entry {\code {{\tt\indexbackslash }WIFfmt}}{35}
+\entry {\code {{\tt\indexbackslash }Wlbl}}{21, 66}
+\entry {\code {{\tt\indexbackslash }WXA}}{27}
+\initial {A}
+\entry {\code {ASCIIstr}}{40}
+\initial {C}
+\entry {\code {CONTENTS.tex}}{11}
+\initial {F}
+\entry {\code {fweb.sty}}{10, 83}
+\entry {\code {FWEB{\_}INCLUDES}}{78}
+\entry {\code {FWEB{\_}INI}}{78}
+\entry {\code {FWEB{\_}STYLE{\_}DIR}}{78}
+\entry {\code {fwebmac.sty}}{69, 70}
+\entry {\code {fwebmac.web}}{85}
+\entry {\code {fwebnum.sty}}{75}
+\initial {I}
+\entry {\code {INDEX.tex}}{11}
+\initial {M}
+\entry {\code {MODULES.tex}}{11}
+\entry {\code {multicol.sty}}{72}
+\initial {T}
+\entry {\code {tempnam}}{17}
+\entry {\code {tmpnam}}{17}
